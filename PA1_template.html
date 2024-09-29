@@ -419,7 +419,6 @@ considerably larger than 0 and there is quite a bit of data near the
 center. As a result, I used 20 bins, or ~ 1060 steps. This showed the
 center of the data while displaying the variation and indicating the
 relatively large number of days with a low step count.</em><br />
-<br />
 </p>
 <pre class="r"><code>daily_steps &lt;- activity %&gt;% group_by(date) %&gt;%  # total steps per day
                         summarize(total_steps = sum(steps, na.rm = TRUE))
@@ -444,8 +443,6 @@ They <strong>averaged 9354.23 steps per day</strong> with a
 </div>
 <div id="what-is-the-average-daily-activity-pattern" class="section level2">
 <h2>What is the average daily activity pattern?</h2>
-<p><br />
-</p>
 <p>The code below computes the average number of steps during each time
 interval throughout the month, ignoring missing values. Additionally, it
 plots the average number of steps for each time interval.</p>
@@ -457,7 +454,6 @@ interval</li>
 </ol>
 <p><br />
 <em>Note: missing values were ignored</em><br />
-<br />
 </p>
 <pre class="r"><code># compute average steps in each time interval across all days. Ignore NAs
 avg_step_intervals &lt;- activity %&gt;% group_by(time) %&gt;% 
@@ -487,8 +483,6 @@ minute</strong> <strong>interval starting at 8:35</strong>.</p>
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
-<p><br />
-</p>
 <p>The code below computes the number of rows containing NA values.</p>
 <pre class="r"><code>NA_rows &lt;- nrow(activity) - sum(complete.cases(activity) )</code></pre>
 <p><br />
@@ -517,11 +511,13 @@ displayed above. Note that the step values for these rows contain
 values, the appropriate time interval averages, whereas they were
 previously <code>NA</code> values.<br />
 <br />
-The code below uses the imputed data to do the following:<br />
-1. Recompute the total number daily steps 2. Plot a histogram of the
-total number of daily steps 3. Recompute the mean number of daily steps
-4. Recompute the median number of daily steps<br />
-</p>
+The code below uses the imputed data to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Recompute the total number daily steps</li>
+<li>Plot a histogram of the total number of daily steps</li>
+<li>Recompute the mean number of daily steps</li>
+<li>Recompute the median number of daily steps</li>
+</ol>
 <pre class="r"><code>imputed_steps &lt;- activity %&gt;% group_by(date) %&gt;% 
                           summarize(total_steps = sum(steps))
 # replot histogram with imputed values
@@ -552,7 +548,6 @@ reality. We would need more information about the days where data was
 missing to determine whether specific factors may have caused a
 significant decrease in total steps on those days (e.g. rest,
 injury).<br />
-<br />
 </p>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
@@ -576,12 +571,18 @@ activity[activity$day_of_week %in% week_end,&#39;day_type&#39;] &lt;- &#39;weeke
 activity$day_type &lt;- as.factor(activity$day_type)
 
 head(activity,5) # display new factor variable &quot;day_type&quot;</code></pre>
-<pre><code>##       steps       date interval  time day_of_week day_type
-## 1 1.7169811 2012-10-01        0  0:00      Monday  weekday
-## 2 0.3396226 2012-10-01        5  0:05      Monday  weekday
-## 3 0.1320755 2012-10-01       10  0:10      Monday  weekday
-## 4 0.1509434 2012-10-01       15  0:15      Monday  weekday
-## 5 0.0754717 2012-10-01       20  0:20      Monday  weekday</code></pre>
+<pre><code>##       steps       date interval  time day_of_week
+## 1 1.7169811 2012-10-01        0  0:00      Monday
+## 2 0.3396226 2012-10-01        5  0:05      Monday
+## 3 0.1320755 2012-10-01       10  0:10      Monday
+## 4 0.1509434 2012-10-01       15  0:15      Monday
+## 5 0.0754717 2012-10-01       20  0:20      Monday
+##   day_type
+## 1  weekday
+## 2  weekday
+## 3  weekday
+## 4  weekday
+## 5  weekday</code></pre>
 <pre class="r"><code>levels(activity$day_type) # show factor levels</code></pre>
 <pre><code>## [1] &quot;weekday&quot; &quot;weekend&quot;</code></pre>
 <p><br />
@@ -590,8 +591,7 @@ the interval occurred on a <em>weekday</em> or the <em>weekend</em>. It
 also creates separate panel plots:</p>
 <ol style="list-style-type: decimal">
 <li>steps vs time interval (weekday)</li>
-<li>steps vs time interval (weekend)<br />
-</li>
+<li>steps vs time interval (weekend)</li>
 </ol>
 <pre class="r"><code># analyze type of day vs time interval
 type_of_day &lt;- activity %&gt;% group_by(day_type,time) %&gt;% 

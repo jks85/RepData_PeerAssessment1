@@ -83,7 +83,7 @@ or ~ 1060 steps. This showed the center of the data while displaying the
 variation and indicating the relatively large number of days with a low step 
 count.*
 \
-\
+
 
 ``` r
 daily_steps <- activity %>% group_by(date) %>%  # total steps per day
@@ -114,7 +114,7 @@ They **averaged 9354.23 steps per day** with a
 
 
 ## What is the average daily activity pattern?  
-\
+
 
 The code below computes the average number of steps during each time interval
 throughout the month, ignoring missing values. Additionally, it plots the
@@ -128,7 +128,7 @@ The code below performs following analyses:
 \
 *Note: missing values were ignored*
 \
-\
+
 
 ``` r
 # compute average steps in each time interval across all days. Ignore NAs
@@ -161,7 +161,7 @@ This individual had their **highest average step count in the five minute**
 **interval starting at  8:35**.   
 
 ## Imputing missing values
-\
+
 
 The code below computes the number of rows containing NA values.
 
@@ -203,12 +203,12 @@ interval averages, whereas they were previously `NA` values.
 \
 \
 The code below uses the imputed data to do the following:
-\
+
 1. Recompute the total number daily steps
 2. Plot a histogram of the total number of daily steps
 3. Recompute the mean number of daily steps
-4. Recompute the median number of daily steps
-\
+4. Recompute the median number of daily steps  
+
 
 ``` r
 imputed_steps <- activity %>% group_by(date) %>% 
@@ -244,7 +244,7 @@ manner is justified in reality. We would need more information about the days
 where data was missing to determine whether specific factors may have caused a 
 significant decrease in total steps on those days (e.g. rest, injury).
 \
-\
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -270,12 +270,18 @@ head(activity,5) # display new factor variable "day_type"
 ```
 
 ```
-##       steps       date interval  time day_of_week day_type
-## 1 1.7169811 2012-10-01        0  0:00      Monday  weekday
-## 2 0.3396226 2012-10-01        5  0:05      Monday  weekday
-## 3 0.1320755 2012-10-01       10  0:10      Monday  weekday
-## 4 0.1509434 2012-10-01       15  0:15      Monday  weekday
-## 5 0.0754717 2012-10-01       20  0:20      Monday  weekday
+##       steps       date interval  time day_of_week
+## 1 1.7169811 2012-10-01        0  0:00      Monday
+## 2 0.3396226 2012-10-01        5  0:05      Monday
+## 3 0.1320755 2012-10-01       10  0:10      Monday
+## 4 0.1509434 2012-10-01       15  0:15      Monday
+## 5 0.0754717 2012-10-01       20  0:20      Monday
+##   day_type
+## 1  weekday
+## 2  weekday
+## 3  weekday
+## 4  weekday
+## 5  weekday
 ```
 
 ``` r
@@ -292,8 +298,8 @@ interval occurred on a *weekday* or the *weekend*. It also creates separate
 panel plots:  
 
 1. steps vs time interval (weekday)
-2. steps vs time interval (weekend)
-\
+2. steps vs time interval (weekend)  
+
 
 ``` r
 # analyze type of day vs time interval

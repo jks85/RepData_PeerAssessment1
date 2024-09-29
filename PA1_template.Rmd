@@ -68,7 +68,7 @@ or ~ 1060 steps. This showed the center of the data while displaying the
 variation and indicating the relatively large number of days with a low step 
 count.*
 \
-\
+
 ```{r totals}
 daily_steps <- activity %>% group_by(date) %>%  # total steps per day
                         summarize(total_steps = sum(steps, na.rm = TRUE))
@@ -95,7 +95,7 @@ They **averaged `r round(mean_daily_steps,2)` steps per day** with a
 
 
 ## What is the average daily activity pattern?  
-\
+
 
 The code below computes the average number of steps during each time interval
 throughout the month, ignoring missing values. Additionally, it plots the
@@ -109,7 +109,7 @@ The code below performs following analyses:
 \
 *Note: missing values were ignored*
 \
-\
+
 ```{r intervals}
 # compute average steps in each time interval across all days. Ignore NAs
 avg_step_intervals <- activity %>% group_by(time) %>% 
@@ -139,7 +139,7 @@ This individual had their **highest average step count in the five minute**
 **interval starting at `r busy_time`**.   
 
 ## Imputing missing values
-\
+
 
 The code below computes the number of rows containing NA values.
 ```{r checkNAs}
@@ -171,12 +171,12 @@ interval averages, whereas they were previously `NA` values.
 \
 \
 The code below uses the imputed data to do the following:
-\
+
 1. Recompute the total number daily steps
 2. Plot a histogram of the total number of daily steps
 3. Recompute the mean number of daily steps
-4. Recompute the median number of daily steps
-\
+4. Recompute the median number of daily steps  
+
 ```{r impute}
 imputed_steps <- activity %>% group_by(date) %>% 
                           summarize(total_steps = sum(steps))
@@ -207,7 +207,7 @@ manner is justified in reality. We would need more information about the days
 where data was missing to determine whether specific factors may have caused a 
 significant decrease in total steps on those days (e.g. rest, injury).
 \
-\
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -239,8 +239,8 @@ interval occurred on a *weekday* or the *weekend*. It also creates separate
 panel plots:  
 
 1. steps vs time interval (weekday)
-2. steps vs time interval (weekend)
-\
+2. steps vs time interval (weekend)  
+
 ```{r patterns, message= FALSE}
 # analyze type of day vs time interval
 type_of_day <- activity %>% group_by(day_type,time) %>% 
