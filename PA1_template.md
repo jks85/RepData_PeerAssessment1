@@ -102,7 +102,8 @@ steps_plot + geom_histogram(color='blue', fill= 'blue', bins = 20) + # annotate
              scale_y_continuous(breaks = seq(from = 0, to = 10, by = 2))
 ```
 
-![](Figs/totals-1.png)<!-- -->
+![](https://github.com/jks85/RepData_PeerAssessment1/blob/master/totals-1.png)
+
 
 ``` r
 # compute mean, median
