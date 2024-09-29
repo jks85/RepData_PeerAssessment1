@@ -157,7 +157,7 @@ step_intervals_plot + geom_line() +
                     theme(plot.title = element_text(hjust = 0.5))
 ```
 
-![](Figs/intervals-1.png)<!-- -->
+![](https://github.com/jks85/RepData_PeerAssessment1/blob/master/intervals-1.png)
 \
 \
 This individual had their **highest average step count in the five minute**
@@ -227,7 +227,7 @@ imputed_steps_plot + geom_histogram(color='blue', fill= 'blue', bins = 20) +
             scale_y_continuous(breaks = seq(from = 0, to = 10, by = 2))
 ```
 
-![](Figs/impute-1.png)<!-- -->
+![](https://github.com/jks85/RepData_PeerAssessment1/blob/master/impute-1.png)
 
 ``` r
 imputed_mean_daily_steps = mean(imputed_steps$total_steps)
@@ -318,8 +318,7 @@ type_of_day_plot + geom_line(color = 'blue') +
                    strip.background = element_rect(fill = rgb(1, 0.83, 0.61))) 
 ```
 
-![](Figs/patterns-1.png)<!-- -->
-
+![](https://github.com/jks85/RepData_PeerAssessment1/blob/master/patterns-1.png)
 ``` r
   # use facet_wrap to create separate plots for weekday and weekend
   # used RGB and https://r-charts.com/colors/ to try to match strip color 
