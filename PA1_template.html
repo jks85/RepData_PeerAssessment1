@@ -571,18 +571,12 @@ activity[activity$day_of_week %in% week_end,&#39;day_type&#39;] &lt;- &#39;weeke
 activity$day_type &lt;- as.factor(activity$day_type)
 
 head(activity,5) # display new factor variable &quot;day_type&quot;</code></pre>
-<pre><code>##       steps       date interval  time day_of_week
-## 1 1.7169811 2012-10-01        0  0:00      Monday
-## 2 0.3396226 2012-10-01        5  0:05      Monday
-## 3 0.1320755 2012-10-01       10  0:10      Monday
-## 4 0.1509434 2012-10-01       15  0:15      Monday
-## 5 0.0754717 2012-10-01       20  0:20      Monday
-##   day_type
-## 1  weekday
-## 2  weekday
-## 3  weekday
-## 4  weekday
-## 5  weekday</code></pre>
+<pre><code>##       steps       date interval  time day_of_week day_type
+## 1 1.7169811 2012-10-01        0  0:00      Monday  weekday
+## 2 0.3396226 2012-10-01        5  0:05      Monday  weekday
+## 3 0.1320755 2012-10-01       10  0:10      Monday  weekday
+## 4 0.1509434 2012-10-01       15  0:15      Monday  weekday
+## 5 0.0754717 2012-10-01       20  0:20      Monday  weekday</code></pre>
 <pre class="r"><code>levels(activity$day_type) # show factor levels</code></pre>
 <pre><code>## [1] &quot;weekday&quot; &quot;weekend&quot;</code></pre>
 <p><br />
