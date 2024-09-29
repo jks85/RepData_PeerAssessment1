@@ -8,6 +8,13 @@ output:
 
 
 ---
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
 ## Intro
 This project analyzes step data from a wearable device for the dates October 1st 2012 to November 30th 2012. An additional goal is to use R Markdown and knitr to communicate the analysis a more friendly, human readable format.  
 
@@ -265,7 +272,7 @@ earlier, end slightly earlier, and have a higher peak compared to the weekend
 intervals. The weekend intervals have more consistent activity during the active
 periods. We also observe a bit more activity at night in the weekend intervals.
 It is unclear how much the method of imputing the data contributed to the
-similarity of the two plots. In a deeper analysis would be worthwhile to examine
-whether weekdays or weekends were over-represented in the imputed data. It 
-may also be advisable compare weekday vs weekend steps by ignoring the original
-missing data.
+similarity of the two plots. In a deeper analysis it would be worthwhile to 
+examine whether weekdays or weekends were over-represented in the imputed data. 
+It may also be advisable compare weekday vs weekend steps by ignoring the 
+original missing data.
